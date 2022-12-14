@@ -131,6 +131,9 @@ fetch_data(GET_TYPES_SPARQL_QUERY_URL).then(result => {
       const conceptName = binding.conceptName.value;
         createSchema(typeUrl, conceptName).then(schema => {
         console.log('Schema for ' + binding.typeLabel.value)
+        if(binding.typeLabel.value === 'Digital Specimen'){
+          //console.dir(result, {depth: null})
+        }
           console.dir(schema, {depth: null});
           // Upload the shex schema as a payload via the Cordra REST API
           // See: https://www.cordra.org/documentation/api/rest-api.html#create-object-by-type
